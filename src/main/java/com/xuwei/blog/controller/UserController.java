@@ -34,6 +34,7 @@ public class UserController {
 		Map<String, String> param = ParamThreadLocal.get();
 		logger.info("param::" + JSON.toJSONString(param));
 		String userId = param.get("id");
+		logger.info("开始！！");
 		MapResult result = null;
 		try {
 			if (StringUtils.isEmpty(userId)) {

@@ -1,2 +1,3 @@
-/target
+/target/classes/com/xuwei/blog/model/*.class
+/target/myBlog-1.0/WEB-INF/lib
 /.settings
