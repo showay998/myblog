@@ -59,4 +59,17 @@ public class UserController {
 		}
 		return ResponseUtil.outputJSONResponse(request, response, result);
 	}
+
+	@RequestMapping(value = "/registerId")
+	public ModelAndView registerUser(HttpServletRequest request, HttpServletResponse response) {
+		Map<String, String> param = ParamThreadLocal.get();
+		MapResult mapResult;
+		try {
+			mapResult = userService.registerUser(param);
+		} catch (Exception e) {
+			logger.error("请求异常，请稍后重试！");
+			mapResult = new MapResult(CodeMsg.FAIL, "请求失败");
+		}
+		return ResponseUtil.outputJSONResponse(request, response, mapResult);
+	}
 }
